@@ -9,4 +9,5 @@ interface ExpenseRepositoryInterface {
     function change_expense_status(int $expense_id ,string $status) : bool;
     function cancel_expense(int $expense_id ,int $employee_id) : bool;
     function create_expense(array $attributes) : Model;
+    function find_expense(int $id) : Model;
 }

@@ -17,3 +17,6 @@ this repo for a technical test at <a href="https://1cliquesystems.com/">1 Clique
 - *** php artisan key:generate
 - *** php artisan migrate --seed
 - *** php artisan storage:link
+
+## Helpful Hints
+- api collection & api documentation in the project root folder

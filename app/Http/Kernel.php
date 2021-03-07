@@ -2,8 +2,11 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\EmployeeApiAccess;
 use App\Http\Middleware\EmployeeRole;
+use App\Http\Middleware\ManagerApiAccess;
 use App\Http\Middleware\ManagerRole;
+use App\Http\Middleware\UserApiAccess;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -66,6 +69,9 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
         'employee-role' => EmployeeRole::class,
-        'manager-role' => ManagerRole::class
+        'manager-role' => ManagerRole::class,
+        'employee-api-access' => EmployeeApiAccess::class,
+        'manager-api-access' => ManagerApiAccess::class,
+        'user-api-access' => UserApiAccess::class
     ];
 }

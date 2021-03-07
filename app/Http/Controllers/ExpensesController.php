@@ -6,7 +6,7 @@ use App\Http\Requests\ExpenseCreateRequest;
 use App\Repositories\ExpenseRepositoryInterface;
 
 class ExpensesController extends Controller
-{   
+{
     protected $expense_repository;
 
     function __construct(ExpenseRepositoryInterface $repository) {

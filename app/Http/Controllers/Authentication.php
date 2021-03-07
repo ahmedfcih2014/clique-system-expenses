@@ -1,8 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class Authentication extends Controller
 {
@@ -29,5 +31,26 @@ class Authentication extends Controller
     function logout() {
         Auth::logout();
         return redirect(route('login'));
+    }
+
+    function api_login() {
+        if (!request()->has('username') || !request()->has('password'))
+            return $this->api_login_error();
+        
+        $username = request('username');
+        $password = request('password');
+
+        $user = User::where('username' ,$username)->first();
+        if (Hash::check($password ,$user->password)) {
+            return response([
+                'message' => 'Welcome to API ,please use user_id to your all requests',
+                'user_id' => $user->id
+            ]);
+        }
+        return $this->api_login_error();
+    }
+
+    private function api_login_error() {
+        return response(['message' => 'Enter valid credentials'] ,Response::HTTP_BAD_REQUEST);
     }
 }

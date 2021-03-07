@@ -1,0 +1,239 @@
+{
+	"variables": [],
+	"info": {
+		"name": "clique-systems-expenses",
+		"_postman_id": "ea6574b9-ec48-c7fb-e3b7-1d4deb77a606",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "expenses",
+			"request": {
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/expenses?user_id=1&limit=50",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"expenses"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "limit",
+							"value": "50",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "fetch_expense",
+			"request": {
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/expenses/26?user_id=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"expenses",
+						"26"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "3",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "cancel_expense",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/expenses/26/cancel",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "3",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "_method",
+							"value": "patch",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "approve_expense",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/expenses/26/approve",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "_method",
+							"value": "patch",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "reject_expense",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/expenses/1/reject",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "_method",
+							"value": "patch",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user_login",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/user_login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "ahmed",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create_expense",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/expenses/create",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "500",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2021-03-25",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "march 2 expense",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "attachment",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

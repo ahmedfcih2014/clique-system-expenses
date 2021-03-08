@@ -41,7 +41,7 @@ class Authentication extends Controller
         $password = request('password');
 
         $user = User::where('username' ,$username)->first();
-        if (Hash::check($password ,$user->password)) {
+        if ($user && Hash::check($password ,$user->password)) {
             return response([
                 'message' => 'Welcome to API ,please use user_id to your all requests',
                 'user_id' => $user->id

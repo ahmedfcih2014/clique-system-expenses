@@ -47,6 +47,6 @@ class ExpenseRepository implements ExpenseRepositoryInterface {
     }
 
     function find_expense(int $id) : Model {
-        return $this->model->find($id);
+        return $this->model->findOrFail($id);
     }
 }

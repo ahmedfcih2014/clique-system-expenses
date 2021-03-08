@@ -20,3 +20,13 @@ this repo for a technical test at <a href="https://1cliquesystems.com/">1 Clique
 
 ## Helpful Hints
 - api collection & api documentation in the project root folder
+
+## Testing
+please follow those steps to run automation tests
+- update or create .env.testing file and set your own DB test name to make sure you test env is separated from production one
+- run this command :
+**-** php artisan --env=testing migrate:refresh && php artisan --env=testing db:seed --class=FillTestDB
+- now you can run our unit tests
+**-** php artisan test --testsuite=Unit // for testing our expense repository functions
+**-** php artisan test --testsuite=Feature // for testing our expense apis
+***-*** helpful hint make sure you always refresh DB test to make sure there is conflict in data we use static ids for some resources so please refresh it each time you want to run tests
